@@ -7,7 +7,7 @@ function TextList() {
 
   return (
     <Row>
-      {texts.map((text, index) => (
+      {texts.reverse().map((text, index) => (
         <Col md="4" key={index}>
           <TextCard text={text} />
         </Col>
