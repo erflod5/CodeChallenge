@@ -1,0 +1,25 @@
+version: "3.7"
+services:
+  api:
+    image: toolbox-backend
+    build:
+      context: ./backend
+    restart: always
+    ports:
+      - 3000:3000
+    networks:
+      - full-network
+      
+  front-react:
+    image: toolbox-frontend
+    build:
+      context: ./frontend
+    stdin_open: true
+    ports:
+      - "80:80"
+    networks:
+      - full-network
+
+networks:
+  full-network:
+    driver: bridge
