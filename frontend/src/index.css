@@ -5,4 +5,19 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #e8e4e4;
+}
+
+.colorNavBar {
+  background-color: red;
+}
+
+.btnNavBar {
+  background-color: blue;
+  color: white;
+}
+
+.containerResult {
+  background-color: white !important;
+  min-height: 80vh;
 }

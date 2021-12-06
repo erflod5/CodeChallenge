@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { Form, Row, Col, Button } from "react-bootstrap";
+import { Form, Button, Navbar, Container, Row, Col } from "react-bootstrap";
 import { echoActions } from "../actions";
 
 function TextAdd() {
@@ -18,25 +18,29 @@ function TextAdd() {
   }
 
   return (
-    <Form onSubmit={sendText}>
-      <Row className="align-items-center">
-        <Col xs="auto">
-          <Form.Control
-            className="mb-2"
-            id="inlineFormInput"
-            placeholder="Add text"
-            onChange={handleChange}
-            value={text}
-          />
-        </Col>
-
-        <Col xs="auto">
-          <Button className="mb-2" onClick={sendText}>
-            Submit
-          </Button>
-        </Col>
-      </Row>
-    </Form>
+    <Navbar className="colorNavBar" expand="md" sticky="top">
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse>
+        <Container>
+          <Form onSubmit={sendText}>
+            <Row>
+              <Col md={{ span: 6, offset: 2 }}>
+                <Form.Control
+                  placeholder="Insert Text"
+                  value={text}
+                  onChange={handleChange}
+                />
+              </Col>
+              <Col md="2">
+                <Button className="btnNavBars" onClick={sendText}>
+                  Send
+                </Button>
+              </Col>
+            </Row>
+          </Form>
+        </Container>
+      </Navbar.Collapse>
+    </Navbar>
   );
 }
 

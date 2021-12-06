@@ -4,12 +4,9 @@ function TextCard({ text }) {
   return (
     <Card className="m-1">
       <Card.Body>
-        <p>
-          <strong>Text: </strong> {text.text}
-        </p>
-        <p>
-          <strong>Is palindrome?: </strong> {text.palindrome ? "Yes" : "No"}
-        </p>
+        <strong>Text: </strong> {text.text}
+        <br />
+        <strong>Is palindrome?: </strong> {text.palindrome ? "Yes" : "No"}
       </Card.Body>
     </Card>
   );
